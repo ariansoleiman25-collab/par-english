@@ -1573,30 +1573,33 @@ button {
         --card-solid: #1c1c1e;
         --card-hover: rgba(44, 44, 46, .94);
         --glass: rgba(28, 28, 30, .62);
-        --t1: #f5f5f7;
-        --t2: #a1a1a6;
-        --t3: #6e6e73;
-        --t4: #48484a;
-        --border: rgba(255, 255, 255, .10);
-        --border-h: rgba(255, 255, 255, .16);
-        --hairline: rgba(255, 255, 255, .08);
-        --shadow: 0 1px 2px rgba(0, 0, 0, .26), 0 16px 42px rgba(0, 0, 0, .28);
-        --shadow-lg: 0 12px 34px rgba(0, 0, 0, .34), 0 42px 110px rgba(0, 0, 0, .40);
-        --blue-light: rgba(0, 113, 227, .16);
-        --green-light: rgba(52, 199, 89, .15);
-        --red-light: rgba(255, 59, 48, .14);
+
+        /* Keep text colors DARK so they're readable on white backgrounds */
+        --t1: #1d1d1f;
+        --t2: #6e6e73;
+        --t3: #a1a1a6;
+        --t4: #c7c7cc;
+
+        --border: rgba(0, 0, 0, .07);
+        --border-h: rgba(0, 0, 0, .13);
+        --hairline: rgba(0, 0, 0, .05);
+        --shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 10px 30px rgba(0, 0, 0, .06);
+        --shadow-lg: 0 8px 22px rgba(0, 0, 0, .08), 0 30px 80px rgba(0, 0, 0, .10);
+        --blue-light: #e8f2ff;
+        --green-light: #ebfff0;
+        --red-light: #fff0ef;
     }
 
     body {
         background:
             radial-gradient(circle at 18% -10%, rgba(41, 151, 255, .18), transparent 32rem),
-            radial-gradient(circle at 88% 12%, rgba(175, 82, 222, .15), transparent 32rem),
-            linear-gradient(180deg, #000 0%, #050505 60%, #111 100%);
+            radial-gradient(circle at 88% 12%, rgba(175, 82, 222, .14), transparent 32rem),
+            linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 54%, #ffffff 100%);
     }
 
     .exam-nav,
     .exam-footer {
-        background: rgba(0, 0, 0, .64);
+        background: rgba(251, 251, 253, .72);
     }
 
     .hero-badge,
@@ -1610,14 +1613,221 @@ button {
     .show-answer-btn,
     .fill-input,
     .result-stat {
-        border-color: rgba(255, 255, 255, .10);
-        background-color: rgba(28, 28, 30, .68);
-        box-shadow: var(--shadow);
+        border-color: rgba(0, 0, 0, .07);
     }
 
     .option-letter,
     .tab-count {
-        background: rgba(255, 255, 255, .08);
+        background: rgba(0, 0, 0, .045);
+    }
+
+    /* Ensure nav button text stays readable */
+    .nav-btn {
+        color: var(--blue);
+    }
+
+    /* Score and result text */
+    .score-text,
+    .results-title,
+    .result-stat-value,
+    .review-heading,
+    .exam-progress-info {
+        color: #1d1d1f;
+    }
+
+    .result-stat-label,
+    .percent-sign,
+    .exam-timer {
+        color: #6e6e73;
+    }
+
+    /* Question text */
+    .question-text,
+    .question-number {
+        color: #1d1d1f;
+    }
+
+    .question-number {
+        color: var(--blue);
+    }
+
+    /* Option text */
+    .option-btn {
+        color: #1d1d1f;
+    }
+
+    .option-letter {
+        color: #6e6e73;
+    }
+
+    /* Fill-in text */
+    .fill-text {
+        color: #6e6e73;
+    }
+
+    .fill-input {
+        color: #1d1d1f;
+    }
+
+    .fill-number {
+        color: var(--blue);
+    }
+
+    /* Footer btn text */
+    .footer-btn {
+        color: #1d1d1f;
+    }
+
+    /* Section tab text */
+    .section-tab {
+        color: #6e6e73;
+    }
+
+    .section-tab.active {
+        color: #fff;
+    }
+
+    /* Hero text */
+    .hero-title {
+        color: #1d1d1f;
+    }
+
+    .hero-subtitle {
+        color: #6e6e73;
+    }
+
+    .hero-badge {
+        color: #6e6e73;
+    }
+
+    /* Stat card text */
+    .stat-number {
+        color: var(--blue);
+    }
+
+    .stat-label {
+        color: #6e6e73;
+    }
+
+    /* Feedback messages */
+    .feedback-msg.correct-fb {
+        color: #147a32;
+    }
+
+    .feedback-msg.wrong-fb {
+        color: #bf2c24;
+    }
+
+    /* Study answer */
+    .study-answer {
+        color: #147a32;
+    }
+
+    /* Show answer btn */
+    .show-answer-btn {
+        color: #6e6e73;
+    }
+
+    /* Review badges */
+    .review-correct .review-badge {
+        color: #147a32;
+    }
+
+    .review-wrong .review-badge {
+        color: #bf2c24;
+    }
+
+    /* Ghost btn */
+    .btn-ghost {
+        color: #6e6e73;
+    }
+
+    /* Secondary btn */
+    .btn-secondary {
+        color: #1d1d1f;
+    }
+
+    /* Scroll dot */
+    .scroll-dot {
+        background: #a1a1a6;
+    }
+
+    /* Auto-next text */
+    .auto-next {
+        color: #a1a1a6;
+    }
+
+    /* Word tag */
+    .word-tag {
+        color: var(--blue);
+    }
+
+    /* Fill answer */
+    .fill-answer {
+        color: #147a32;
+    }
+
+    /* Ambient background - keep light */
+    .ambient-bg {
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, .75), rgba(255, 255, 255, .15)),
+            radial-gradient(circle at 50% 100%, rgba(0, 113, 227, .06), transparent 50rem);
+    }
+
+    /* Hero background - keep light */
+    #hero {
+        background:
+            radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .96), rgba(255, 255, 255, .48) 45%, rgba(245, 245, 247, .92) 100%);
+    }
+
+    /* Results background - keep light */
+    #results {
+        background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .95), rgba(245, 245, 247, .90));
+    }
+
+    /* Q dots */
+    .q-dot {
+        background: rgba(0, 0, 0, .10);
+    }
+
+    .q-dot.active {
+        background: var(--blue);
+    }
+
+    .q-dot.answered {
+        background: var(--green);
+    }
+
+    .q-dot.wrong-dot {
+        background: var(--red);
+    }
+
+    /* Score ring bg */
+    .score-bg {
+        stroke: rgba(0, 0, 0, .06);
+    }
+
+    /* Progress container */
+    .progress-container {
+        background: rgba(0, 0, 0, .035);
+    }
+
+    /* Correct/wrong stat icons */
+    .correct-stat .result-stat-icon {
+        color: var(--green);
+    }
+
+    .wrong-stat .result-stat-icon {
+        color: var(--red);
+    }
+
+    .skip-stat .result-stat-icon {
+        color: #a1a1a6;
+    }
+
+    /* Selection color */
+    ::selection {
+        background: rgba(0, 113, 227, 0.18);
     }
 }
 
