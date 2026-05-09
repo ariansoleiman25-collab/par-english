@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تاقیکردنەوەی ئینگلیزی  - پلاتفۆرمی تاقیکردنەوە بۆ فێربوون">
+    <title>تاقیکردنەوەی ئینگلیزیی</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Hero / Landing Screen -->
+    <section id="hero" class="screen active">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>تاقیکردنەوەی ٢٠٢٥</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">تاقیکردنەوەی</span>
+                <span class="title-line gradient-text">ئینگلیزی</span>
+            </h1>
+            <p class="hero-subtitle">٥٥ پرسیار لە بابەتەکانی ئینگلیزی و تەکنەلۆژیا. ئامادەیت؟</p>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">55</div>
+                    <div class="stat-label">پرسیار</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">بەش</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">هەوڵ</div>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <button id="startExamBtn" class="btn-primary">
+                    <span>دەستپێبکە</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="studyModeBtn" class="btn-secondary">
+                    <span>مۆدی خوێندنەوە</span>
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- Exam Screen -->
+    <section id="exam" class="screen">
+        <nav class="exam-nav">
+            <button id="backToHome" class="nav-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                <span>گەڕانەوە</span>
+            </button>
+            <div class="exam-progress-info">
+                <span id="currentQ">١</span>
+                <span class="separator">/</span>
+                <span id="totalQ">٥٥</span>
+            </div>
+            <div id="examTimer" class="exam-timer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                </svg>
+                <span id="timerDisplay">00:00</span>
+            </div>
+        </nav>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <!-- Section Tabs -->
+        <div class="section-tabs">
+            <button class="section-tab active" data-section="mcq">
+                <span class="tab-icon">📝</span>
+                <span>بەشی یەکەم: هەڵبژاردن</span>
+                <span class="tab-count">50</span>
+            </button>
+            <button class="section-tab" data-section="fill">
+                <span class="tab-icon">✏️</span>
+                <span>بەشی دووەم: پڕکردنەوە</span>
+                <span class="tab-count">5</span>
+            </button>
+        </div>
+
+        <!-- Question Container -->
+        <div id="questionContainer" class="question-container">
+            <!-- Questions rendered by JS -->
+        </div>
+
+        <!-- Navigation -->
+        <div class="exam-footer">
+            <button id="prevBtn" class="footer-btn" disabled>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                <span>پێشوو</span>
+            </button>
+            <div id="questionDots" class="question-dots">
+                <!-- Dots rendered by JS -->
+            </div>
+            <button id="nextBtn" class="footer-btn">
+                <span>دواتر</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Submit Button -->
+        <div id="submitArea" class="submit-area hidden">
+            <button id="submitBtn" class="btn-submit">
+                <span>ناردنی وەڵامەکان</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results" class="screen">
+        <div class="results-content">
+            <div id="resultsIcon" class="results-icon">🎉</div>
+            <h2 class="results-title" id="resultsTitle">ئەنجامەکان</h2>
+            <div id="scoreCircle" class="score-circle">
+                <svg viewBox="0 0 120 120">
+                    <circle class="score-bg" cx="60" cy="60" r="54" />
+                    <circle id="scoreRing" class="score-ring" cx="60" cy="60" r="54" />
+                </svg>
+                <div class="score-text">
+                    <span id="scorePercent">0</span>
+                    <span class="percent-sign">%</span>
+                </div>
+            </div>
+            <div class="results-stats">
+                <div class="result-stat correct-stat">
+                    <div class="result-stat-icon">✓</div>
+                    <div class="result-stat-value" id="correctCount">0</div>
+                    <div class="result-stat-label">ڕاست</div>
+                </div>
+                <div class="result-stat wrong-stat">
+                    <div class="result-stat-icon">✗</div>
+                    <div class="result-stat-value" id="wrongCount">0</div>
+                    <div class="result-stat-label">هەڵە</div>
+                </div>
+                <div class="result-stat skip-stat">
+                    <div class="result-stat-icon">—</div>
+                    <div class="result-stat-value" id="skipCount">0</div>
+                    <div class="result-stat-label">بەتاڵ</div>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button id="reviewBtn" class="btn-primary">
+                    <span>پیشاندانی وەڵامەکان</span>
+                </button>
+                <button id="retryBtn" class="btn-secondary">
+                    <span>دووبارە هەوڵدانەوە</span>
+                </button>
+                <button id="homeBtn" class="btn-ghost">
+                    <span>گەڕانەوە بۆ سەرەتا</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Screen -->
+    <section id="review" class="screen">
+        <nav class="exam-nav">
+            <button id="backToResults" class="nav-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                <span>ئەنجامەکان</span>
+            </button>
+            <h3 class="review-heading">پیشاندانی وەڵامەکان</h3>
+        </nav>
+        <div id="reviewContainer" class="review-container">
+            <!-- Review items rendered by JS -->
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
